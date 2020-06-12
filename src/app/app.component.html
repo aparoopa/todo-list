@@ -1,0 +1,71 @@
+<h1>
+  Enter Text:
+  <input type="text" id="list"  [(ngModel)]='item' #myInput>
+  <button (click)='add(item)'>Add</button>
+  <br>
+  <button (click)="deleteTodo()">Delete</button>
+  <br>
+ 
+  <br>
+</h1>
+<br><br>
+To-Do List
+<br>
+<!----<ul>
+  <li style="display: flex;" *ngFor="let todo of list">
+    <div (click)="setChecked(todo)">{{todo}}</div>
+    <div> <button (click)= "deleteTodo(todo)">Delete</button></div>
+  </li>-->
+
+
+<ul>
+  <li style="display: flex;" *ngFor="let todo of list">
+    <div><input type="checkbox"  (change)="onClick($event, todo)"></div>
+    <div>{{todo}}</div>
+    <span>
+    <button (click)="editTodo(todo)">Edit</button>
+  </span>
+
+  </li>
+  <div *ngIf='editable'><input type="text" value='{{todo}}' [(ngModel)]='item2'>is the changed value</div>
+</ul>
+
+
+<button (click)= "togglepara()">Display details</button>
+<p *ngIf="showSecert">Secret passsword = tuna </p>
+
+
+
+<!-- <div style="margin-left:30%;margin-left:30%;margin-bottom: 10px; border-style: dotted">
+  <h1>
+  <input type=text style="margin-left:50%" value="Enter your name" >
+  </h1>
+<span>
+    <button style="margin-left:50%;background-color: #4CAF50">Login with Facebook</button>
+    <br><br>
+    <button style="margin-left:50%;background-color: #4CAF50">Login with Google</button>
+</span>
+
+</div> -->
+
+<!-- <H1>SELECT A SUBJECT</H1>
+ <br><br>
+<div>
+<select>
+    <option value="volvo">MATHS</option>
+    <option value="saab">SCIENCE</option>
+    <option value="mercedes">HISTORY</option>
+    <option value="audi">GEOGRAPHY</option>
+    <option value="german">GENERAL KNOWLEDGE</option>
+    <option value="spanish">COMPUTER </option>
+  </select>
+</div> 
+<br><br> -->
+<!-- 
+<div>
+    <button style="border-radius: 2px;font-size:50px;float: left">VS Computer</button>
+    <button style="border-radius: 2px; font-size:50px;float: right">Play with friends</button>
+    <button style="border-radius: 2px; font-size:50px;float: right">Play Offline</button>
+</div> -->
+
+
